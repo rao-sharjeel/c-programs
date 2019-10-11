@@ -1,0 +1,30 @@
+// -------------------This program computes the value of the constant 'e' ------------------
+//---------------------------By RAO SHARJEEL---------------------
+#include<stdio.h>
+float factorial(int);
+
+int main()
+{
+   float numerator=1;
+   float sum=0, fraction;
+   while(numerator<=7.0)                                            // i is less than or equal to the number of fractions we want to add in this case 7
+   {
+       fraction= numerator/factorial(numerator);           // this calculates n/n! called fraction
+       sum = sum+fraction;                                 // this sums up fractions
+       numerator++;
+   }
+
+    printf("\n\n\tThe value of e is %f" , sum);
+}
+
+float factorial(int n)      // function to calculate FACTORIAL
+{
+     int i=0, fac=1, c;
+     while(i<n)
+    {                             // factorial is of the form n * (n-1)*(n-2)..... 2 * 1
+        c= n-i;                  //  here c is equal n and then (n-1)in second iteration
+        fac = fac * c;            // n, (n-1) so on to 1 are multiplied together here
+        i++;
+    }
+    return fac;
+}
