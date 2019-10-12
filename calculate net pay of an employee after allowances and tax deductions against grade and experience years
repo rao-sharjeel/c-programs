@@ -1,0 +1,141 @@
+//-----------This program gives an employee's basic salary, running pay and gross salary against their grade and increments according to their experience with allowances and tax deductions---
+//-----------------------------------------------------by RAO SHARJEEL --------------------------------
+
+#include<stdio.h>
+
+
+
+
+int main()
+{
+    int age , years , bs ,inc , rp;     //---bs = basic salary, years = experience years, inc = increments, rp = running pay
+    char g;                             // g = grade
+
+
+     printf("Enter your grade, age and years of experience: ");
+    scanf("%c%d%d", &g, &age, &years);
+
+     if(g=='w' || g=='W')                              // here basic salary and basic increment is set according to the grade
+    {
+        bs=10000;
+        inc=700;
+    }
+    else if(g=='x' || g=='X' )
+    {
+        bs=12900;
+        inc=910;
+    }
+    else if(g=='y' || g=='Y')
+    {
+        bs=21700;
+        inc=1500;
+    }
+    else if(g=='z' || g=='Z')
+    {
+        bs=32600;
+        inc=2800;
+    }
+    else
+    {
+        printf("invalid grade.");
+    }
+
+
+    rp = bs + years*inc;                // running pay is calculated
+
+
+
+
+    //----------------Allowances-----------
+
+    int hra , ssb , ara , gp , tgp , donation;
+
+    hra = rp *0.45;
+    ssb = bs *0.3;
+    if ((g=='w' || g=='W') && age>40)
+        ara = 3000;
+    else
+        ara=1500;
+
+
+    gp = rp + hra + ssb + ara;                         // gross pay is calculated
+
+    donation = gp%100;                                  // donation is calculated also this is the step where running pay is rounded to the nearest, lower than the actual value, multiple of 10
+
+    tgp = gp - donation;                                 // rounded gross pay is calculated
+
+
+
+
+    //------------------deductions------------------
+
+
+
+    /* 1 PKR 0/          - PKR 400,000/-                 0
+2 PKR 400,001/-            PKR 650,000/-              2.5
+3 PKR 650,001/-            PKR 1,000,000/-            4.75
+4 PKR 1,000,001/          - PKR 1,500,000/-          7
+5 PKR 1,500,001/-                 ∞                  11.5
+
+*/
+
+
+
+
+
+
+
+
+    float i;
+    int it, AI, gpf, total_deductions, net_pay ;            //it = income tax, gpf = general provident fund, AI = annual income
+    AI = gp*12;
+    if(AI>0 && AI<=400000){
+        it = gp*0;
+        i=0;
+        }
+    else if(AI>=400001 && AI<=650000)
+        {
+        it = gp*0.025;
+        i=2.5;
+        }
+    else if(AI>=650001 && AI<=1000000){
+        it = gp*0.045;
+        i= 4.75;
+        }
+    else if(AI>=1000001 && AI<=15000000){
+        it = gp*0.07;
+        i = 7;
+        }
+    else  {
+        it = gp*0.115;
+        i = 11.5;
+        }
+
+    gpf = gp*0.1;                               // gpf is calculated
+    total_deductions = it+gpf+donation;
+    net_pay = gp - total_deductions;
+
+
+
+
+
+
+                                                // all below is printed on the terminal
+
+
+
+
+ printf("\n______________________________________________________________________________ \n\n");
+
+
+
+
+
+ printf("Basic Pay\n_______________\nBasic Salary: \t\t\t%d\nNumber of Increments: \t\t%d\nRunning Pay: \t\t\t%d\n\n\n", bs, years, rp);
+
+
+ printf("Allowances\n_______________\nHouse Rent Allowance: \t\t%d\nSocial Security Benefit: \t%d\nAdhoc Relief Allowance: \t%d\n\nGross Pay: \t\t\t%d\n\n\n", hra, ssb, ara, gp);
+
+
+  printf("Deductions\n_______________\nIncome Tax <at %3.2f%>: \t\t%d\nGeneral Provident Fund: \t%d\nDonation: \t\t\t%d\n\nTotal Deduction: \t\t%d\n\n\nNet Pay: \t\t\t%d\n", i, it, gpf, donation, total_deductions, net_pay);
+}
