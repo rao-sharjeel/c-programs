@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main()
+{
+   int j=1,i,n;
+   printf("Input the number to get its multiplication table : ");
+   scanf("%d",&n);
+   printf("Multiplication table of %d from 1 to : \n",n);
+   scanf("%d",&i);
+     while(j<=i)
+     {
+
+           printf("%dx%d = %d, \n",n,j,n*j);
+            j++;
+
+      }
+
+   }
+
