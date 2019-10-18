@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int
+main()
+{
+    int a, b, h, i;
+    printf("enter 2 integers : ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    a = abs(a);
+    b = abs(b);
+
+    if(a<b)
+        h=a;
+    else
+        h=b;
+
+    while (h>=1)
+   {
+      if (a % h == 0 && b % h == 0)
+         break;
+    h--;
+   }
+    printf("result of Gcd is %d", h);
+}
