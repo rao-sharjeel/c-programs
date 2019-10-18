@@ -1,0 +1,25 @@
+//------------------Russian multiplication by RAO SHARJEEL---------------------
+#include<stdio.h>
+int
+main()
+{
+    int a,b, sum=0;
+    printf("enter 2 integers : ");
+    scanf("%d", &a);
+    scanf("%d", &b);
+
+    if(a<b)       //    swap a and b if a is less than b 
+    {
+        int temp =a;
+        a=b;
+        b=a;
+    }
+    while(b!=1)         // actual procedure
+    {
+        a = a*2;
+        b = b/2;
+        if(b%2!=0)
+            sum += a;          // running sum
+    }
+    printf("result of Russian multiplication is %d", sum);
+}
