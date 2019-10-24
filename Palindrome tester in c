@@ -1,0 +1,22 @@
+#include<stdio.h>
+//-----------------Palindrome number checker by RAO SHARJEEL-----
+int
+main()
+{
+    int num, temp, remainder, sum=0;
+    printf("enter a number to check if it is palindrome or not ");
+    scanf("%d", &num);
+    temp=num;
+    while(num>0)
+    {
+        remainder=num % 10;
+        sum = sum*10 + remainder;
+        num=num/10;
+    }
+    num=temp;
+    if(sum==num)
+        printf("it is palindrome");
+    else
+        printf("it is not palindrome");
+        return(0);
+}
