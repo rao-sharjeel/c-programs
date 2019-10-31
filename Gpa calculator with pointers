@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+void grade_gpa(int, char*, float*);    // declaring the functions. Here * is used as pointer assignment operator.
+
+int main()
+{
+    int points;float gpa;
+    char grade;
+    printf("enter you marks : ");
+    scanf("%d", &points);
+    grade_gpa(points, &grade, &gpa);                              // address of two variables are sent to the functions
+    printf("your gpa is %f and grade is %c", gpa, grade);
+}
+
+
+void grade_gpa(int points, char *grade, float *gpa)        // here grade and gpa are pointers
+{
+    if(points<100 && points>=90)
+    {
+        *gpa = 4.0;                                     // change in *gpa changes the main function variable gpa.
+        *grade = 'A';
+    }
+    else if(points<90 && points>=80)
+    {
+        *gpa = 3.5;
+        *grade = 'B';
+    }
+    else if(points<80 && points>=70)
+    {
+        *gpa = 3.0;
+        *grade = 'C';
+    }
+    else if(points<70 && points>=60)
+    {
+        *gpa = 2.5;
+        *grade = 'C';
+    }
+    else if(points<60 && points>=50)
+    {
+        *gpa = 2.0;
+        *grade = 'D';
+    }
+    else{
+        *gpa = 0.0;
+        *grade = 'F';
+    }
+}
