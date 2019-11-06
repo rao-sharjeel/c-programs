@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int size;
+    printf("give size of array : ");
+    scanf("%d", &size);
+    int  array_1[size];      // declaring and initializing an array that contains int values.
+    int i=0;
+    printf("give element %d of array : ", size);
+    
+    
+    for(int c = 0; c < size; c++) // this will insert data into array.
+        scanf("%d", &array_1[c]);
+        
+        
+    for(int i=0;i<size;i++)   //this is how an array is printed.
+    {
+        printf("%d ", array_1[i]);
+    }
+
+
+}
