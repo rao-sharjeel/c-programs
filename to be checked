@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+
+int main()
+{
+    int size, position, new_value;
+    printf("give no. of elements : ");
+    scanf("%d ", &size);
+    int array_main[size];
+    int i;
+
+    for(i = 0; i<size; i++)
+        {
+            scanf("%d", &array_main[i] );
+        }
+
+
+    printf("give position of element to be changed ie (1 to %d) : ", size );
+    scanf("%d", &position);
+    printf("give new value for that element:  ");
+    scanf("%d", &new_value);
+   // position = position-1;
+    array_main[position-1] = new_value;
+
+    for(i = 0; i<5; i++)
+        {
+            printf("%d\n", array_main[i] );
+        }
+
+}
+
+
