@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int  array_1[5] = {1, 2, 3, 4, 5}; // declaring and initializing an array that contains int values.
+    int array_reversed[5];
+    for(int i=0;i<5;i++) //this is how an array is reversed.
+    {
+        array_reversed[i] = array_1[4-i];
+    }
+    for(int i=0;i<5;i++) //this is how an array is printed.
+    {
+        printf("%d ", array_reversed[i]);
+    }
+
+
+}
