@@ -1,0 +1,38 @@
+#include<stdio.h>
+void num_array();
+int main()
+{
+    int size , i, smallest, largest;
+    printf("enter size of array : ");
+    scanf("%d", &size);
+    int array[size];
+
+    for(i = 0; i<size; i++)
+        scanf("%d", &array[i]);
+
+
+
+    num_array(array, size, &smallest, &largest);
+
+
+   printf("\n smallest is %d", smallest);
+   printf("\n largest is %d", largest);
+
+}
+
+void num_array(int arr[],int size, int *small, int *large)
+{
+    int i,j;
+    *small  = arr[0];
+    *large = arr[0];
+    for(int i =1; i<size; i++)
+        {
+
+                if(arr[i] < *small)
+                    *small = arr[i];
+                if(arr[i] > *large)
+                    *large = arr[i];
+
+        }
+  
+}
