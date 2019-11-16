@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+// This program will create this array {1, 2, 3, 4, 5,   1, 2, 3, 4, 5,    1, 2, 3, 4, 5} 
+
+int main()
+{
+    int i, j,k;
+    int array[15];
+    for(i=0, j=1; i<15; i++)
+       {
+           array[i] = j;
+            j++;
+            if(j==6)
+                j=1;
+       }
+    for(j=0; j<15; j++)
+        printf("%d ", array[j]);
+}
