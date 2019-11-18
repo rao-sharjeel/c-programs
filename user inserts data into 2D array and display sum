@@ -1,0 +1,23 @@
+#include<stdio.h>
+int
+main()
+{
+    int sum=0, i, j;
+    int array[3][3] =  {
+        {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5},
+        {1, 2, 3, 4, 5}
+                        };
+
+    for(i = 0; i<3; i++)
+        for(j = 0; j<3; j++)
+        {
+            printf("enter value for array[%d][%d]", i, j);
+            scanf("%d", &array[i][j]);
+             sum = sum + array[i][j];
+        }
+
+
+    printf("sum is %d", sum);
+
+}
