@@ -1,0 +1,59 @@
+#include<stdio.h>
+int
+main()
+{
+    int sum=0, i, j;
+    int array_1[3][3] =  {
+        {1, 2, 3},
+        {1, 2, 3},
+        {1, 2, 3}
+                        };
+
+    int array_2[3][3] =  {
+        {3, 3, 9},
+        {6, 5, 2},
+        {1, 7, 4}
+                        };
+    int array_sum[3][3];
+
+    for(i = 0; i<3; i++)
+        for(j = 0; j<3; j++)
+        {
+            array_sum[i][j] = array_1[i][j] + array_2[i][j] ;
+        }
+
+
+         printf("1st matrix is : \n");
+
+    for(i = 0; i<3; i++){
+        for(j = 0; j<3; j++)
+    printf(" %d ", array_1[i][j]);
+
+    printf("\n");
+
+    }
+
+     printf("2nd matrix is : \n");
+
+    for(i = 0; i<3; i++){
+        for(j = 0; j<3; j++)
+    printf(" %d ", array_sum[i][j]);
+
+    printf("\n");
+
+    }
+
+
+
+    printf("sum matrix is : \n");
+
+    for(i = 0; i<3; i++){
+        for(j = 0; j<3; j++)
+    printf(" %d ", array_sum[i][j]);
+
+    printf("\n");
+
+    }
+
+
+}
