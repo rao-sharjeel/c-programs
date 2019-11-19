@@ -1,0 +1,17 @@
+#include<stdio.h>
+int
+main()
+{
+
+    int inum;
+    float fnum;
+    printf("enter a number to see if its float or int: ");
+    scanf("%f", &fnum);
+    inum = fnum;
+    if(fnum - inum == 0)
+        printf("it is int. ");
+    else
+     printf("it is float.");
+
+
+}
