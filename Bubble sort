@@ -1,0 +1,41 @@
+#include<stdio.h>
+void scan_array();
+void bubble_sort();
+int main()
+{
+    int i, size;
+    int array[100];
+    scan_array(array, &size);
+    bubble_sort(array, size);
+    for(i = 0; i<size; i++)
+        printf("%d ", array[i]);
+}
+
+void bubble_sort(int array[], int size)
+{
+    int i, j, temp;
+    for(i=0; i<size; i++)
+        for(j=i+1; j<size; j++)
+        {
+            if(array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+}
+
+    void scan_array(int array[],int *size)
+{
+    int i;
+    printf("enter no. of elements in array : ");
+    scanf("%d", size);
+    printf("enter data into array : \n");
+    for(i = 0; i < *size; i++)
+    {
+        printf("enter value no. %d ", i + 1);
+        scanf("%d", &array[i]);
+    }
+}
+
