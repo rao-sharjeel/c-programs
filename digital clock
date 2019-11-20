@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+#include<time.h>
+int main()
+{
+    int i, time,j,k,g;
+    puts("enter current time in HH MM SS");
+    scanf("%d%d%d", &i, &j, &k);
+    for(i;i<=12;i++)
+    {
+         for(j;j<60;j++)
+         {
+             for(k;k<60;k++)
+            {
+                printf("%d:%d:%d\n\n", i,j,k);
+                 delay(1000);
+            }
+         k=0;
+         }
+    j=0;
+    if(i==12)
+        i=0;
+    }
+}
