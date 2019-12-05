@@ -1,0 +1,32 @@
+#include <stdio.h>
+typedef struct
+{
+    int hour;
+    int min;
+    char med[10];
+}tm;
+
+void displaydd();
+
+int main()
+{
+    tm t1 = {5, 1, "pm"};
+    printf("current time is %d:%0.2d %s\n", t1.hour, t1.min, t1.med);
+    scanf("%d%d%s",  &t1.hour, &t1.min, t1.med);
+    //printf("%d:%d %s", t1.hour, t1.min, t1.med);
+    displayadd(t1);
+    return 0;
+}
+
+void displayadd(tm t1)
+{
+    printf("%d:%0.2d %s\nafter adding 1 minute \n", t1.hour, t1.min, t1.med);
+    t1.min ++;
+    if(t1.min == 60)
+        {
+            t1.hour++;
+            t1.min = 0;
+        }
+        printf("%d:%0.2d %s\n\n", t1.hour, t1.min, t1.med);
+
+}
