@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+typedef struct
+{
+    int hour;
+    int min;
+    char med[10];
+}tm;
+
+int main()
+{
+    tm t1 = {5, 10, "pm"};
+    printf("%d:%d %s\n", t1.hour, t1.min, t1.med);
+    scanf("%d%d%s",  &t1.hour, &t1.min, t1.med);
+    printf("%d:%d %s", t1.hour, t1.min, t1.med);
+
+    return 0;
+}
