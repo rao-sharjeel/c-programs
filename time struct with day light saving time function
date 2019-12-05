@@ -1,0 +1,58 @@
+#include <stdio.h>
+typedef struct
+{
+    int hour;
+    int min;
+    char med[10];
+}tm;
+
+void displaydd();
+void day_saving();
+
+int main()
+{
+    tm tr[2] ={ {5, 1, "pm"}, {6, 49, "am"} };
+    tm intime, outtime;
+    
+    intime = tr[0];
+    outtime = tr[1];
+    
+    displayadd(intime);
+    displayadd(outtime);
+    
+    day_saving(tr, 2);
+    
+    return 0;
+}
+
+void displayadd(tm t1)
+{
+    printf("\n%d:%0.2d %s\nafter adding 1 minute \n", t1.hour, t1.min, t1.med);
+    t1.min ++;
+    if(t1.min == 60)
+        {
+            t1.hour++;
+            t1.min = 0;
+        }
+        printf("%d:%0.2d %s\n\n", t1.hour, t1.min, t1.med);
+
+}
+
+void day_saving(tm tr[], int total)
+{
+    printf("This is day light saving time \n");
+    for(int i = 0; i<total; i++)
+    {
+        tr[i].hour--;
+        tr[i].min -= 30;
+        if(tr[i].min < 0)
+        {
+            tr[i].min = tr[i].min + 60;
+            tr[i].hour--;
+        }
+
+    
+    printf("\n%d:%d %s\n", tr[i].hour, tr[i].min, tr[i].med);
+    }
+    
+}
