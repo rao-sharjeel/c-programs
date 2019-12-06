@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include<string.h>
+void find_replace();
+int main()
+{
+    int i, size, space;
+    char str[1000] = {"this is an kem example sting to kem find and replace the words for the semester kem project"};
+    char find[100] = "kem";
+    char replace[100] = "new";
+    char new[1000] = "";
+    
+    printf("the original string is : \n%s\n", str);
+    find_replace(str, find, replace, new);
+    printf("%s", new);
+}
+
+void find_replace(char str[], char find[], char replace[], char new[])
+{
+    int i, size, space=0;
+    char token[100] = "";
+    size = strlen(str);
+    
+    strcat(token, strtok(str, " "));
+    strcat(new, token);
+    strcat(new, " ");
+    
+    for(i=0;i<size;i++)
+        if(str[i] == ' ')
+            space++;
+    
+    for(i=0; i<space+1; i++)
+    {
+        strcpy(token, strtok(NULL, " "));
+        if(strcmp(token, find)==0)
+        {
+            strcat(new, replace);
+            strcat(new, " ");
+            continue;
+        }
+        strcat(new, token);
+        strcat(new, " ");
+    }
+}
+
+
+
+
+
+
+
+
