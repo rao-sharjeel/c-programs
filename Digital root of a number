@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int sum = 0, g;
+    scanf ("%d", &n);
+    
+    while(n > 10)
+    {
+        sum = 0;
+        while(n >=1)
+        {
+            g = n%10;
+            sum += g;
+            n /= 10;
+        }
+        n = sum;
+        printf("%d\n", sum);
+        
+    }
+ 
+    return 0;
+}
